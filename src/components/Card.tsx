@@ -28,7 +28,7 @@ const Card = (props: any) => {
   };
 
   return (
-    <div className="relative w-24 h-32 cursor-pointer">
+    <div className="relative cursor-pointer">
       <div
         className={`relative w-full h-full transform transition-transform duration-500 ${
           props.flipped ? "rotate-y-180" : ""
@@ -45,7 +45,7 @@ const Card = (props: any) => {
 
         {/* Card Back */}
         <img
-          src="/src/assets/0.jpg"
+          src="/src/assets/9.jpg"
           alt="card back"
           className={`absolute w-full h-full rounded-lg shadow-lg backface-hidden ${
             props.flipped ? "opacity-0" : "opacity-100"

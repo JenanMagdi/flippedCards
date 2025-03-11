@@ -13,6 +13,8 @@ const cardSet = [
     {'src': "/src/assets/7.jpg", matched:false},
     {'src': "/src/assets/8.jpg", matched:false},
     {'src': "/src/assets/9.jpg", matched:false},
+    {'src': "/src/assets/9.jpg", matched:false},
+    {'src': "/src/assets/9.jpg", matched:false},
   ]
 function App() {
   const [cards, setCards]:any = useState([]); // Defined state type explicitly
@@ -65,11 +67,12 @@ console.log(cards);
     setTurns(prevTurns => prevTurns + 1)
   }
   return (
-    <div className="bg-gray-900  text-white text-center place-items-center p-20">
-    <div className="w-1/2  h-full place-items-center *:my-4">
+    <div className="bg-gray-900 text-white text-center place-items-center p-5 min-h-screen *:*:m-2">
+    <div className="  place-items-center ">
       <p className="font-bold text-4xl">Magic Match</p>
       <button onClick={shuffleCards} className="border-2 border-gray-300 px-8 p-2">New Game</button>
-      <div className='border border-white h-4/5 w-full flex flex-wrap *:w-40 gap-3 justify-center'>
+      <p className="font-bold text-4xl">{turns}</p>
+      <div className='border border-white w-2/3 flex flex-wrap *:w-28 *:h-40 gap-3 justify-center'>
         {cards.map((card:any) => (
           <Card 
           key={card.id} 
