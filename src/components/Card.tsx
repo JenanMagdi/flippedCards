@@ -1,30 +1,11 @@
-// /* eslint-disable @typescript-eslint/no-explicit-any */
-
-// const Card = (props:any) => {
-
-//   const handleClick = () => {
-//     props.handleChoice(props.card)
-//   }
-//   return (
-//     <div className="  relative transform">
-//       <div className= {`h-fit *:p-3  ${props.flipped ? 'rotate-y-90 absolute' : 'rotate-y-0 ' }`}>
-//         <img src={props.card.src} alt="card front" />
-//         <img 
-//         src="/src/assets/0.jpg" 
-//         alt="card back"
-//         onClick={handleClick}
-//         />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Card;
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 const Card = (props: any) => {
   const handleClick = () => {
-    props.handleChoice(props.card);
+    if(!props.disabled )
+    {
+      props.handleChoice(props.card);
+    }
   };
 
   return (
@@ -45,7 +26,7 @@ const Card = (props: any) => {
 
         {/* Card Back */}
         <img
-          src="/src/assets/9.jpg"
+          src={`/src/assets/${props.back}/back.jpg`}
           alt="card back"
           className={`absolute w-full h-full rounded-lg shadow-lg backface-hidden ${
             props.flipped ? "opacity-0" : "opacity-100"

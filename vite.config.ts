@@ -8,5 +8,5 @@ export default defineConfig({
     tailwindcss(),
     react()
   ],
-  base:"https://jenanmagdi.github.io/flippedCards/"
+  // base:"https://jenanmagdi.github.io/flippedCards"
 })
