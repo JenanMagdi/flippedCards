@@ -3,33 +3,33 @@
 
 import { useEffect, useState } from "react";
 import Confetti from 'react-confetti';
-import lotm0 from "./assets/lotm/0.jpg";
-import lotm1 from "./assets/lotm/1.jpg";
-import lotm10 from "./assets/lotm/10.jpg";
-import lotm11 from "./assets/lotm/11.jpg";
-import lotm2 from "./assets/lotm/2.jpg";
-import lotm3 from "./assets/lotm/3.jpg";
-import lotm4 from "./assets/lotm/4.jpg";
-import lotm5 from "./assets/lotm/5.jpg";
-import lotm6 from "./assets/lotm/6.jpg";
-import lotm7 from "./assets/lotm/7.jpg";
-import lotm8 from "./assets/lotm/8.jpg";
-import lotm9 from "./assets/lotm/9.jpg";
+import lotm0 from "../public/assets/lotm0.jpg";
+import lotm1 from "../public/assets/lotm1.jpg";
+import lotm10 from "../public/assets/lotm10.jpg";
+import lotm11 from "../public/assets/lotm11.jpg";
+import lotm2 from "../public/assets/lotm2.jpg";
+import lotm3 from "../public/assets/lotm3.jpg";
+import lotm4 from "../public/assets/lotm4.jpg";
+import lotm5 from "../public/assets/lotm5.jpg";
+import lotm6 from "../public/assets/lotm6.jpg";
+import lotm7 from "../public/assets/lotm7.jpg";
+import lotm8 from "../public/assets/lotm8.jpg";
+import lotm9 from "../public/assets/lotm9.jpg";
 import Card from "./components/Card";
 
 
-import op0 from "./assets/1piece/0.jpg";
-import op1 from "./assets/1piece/1.jpg";
-import op10 from "./assets/1piece/10.jpg";
-import op11 from "./assets/1piece/11.jpg";
-import op2 from "./assets/1piece/2.jpg";
-import op3 from "./assets/1piece/3.jpg";
-import op4 from "./assets/1piece/4.jpg";
-import op5 from "./assets/1piece/5.jpg";
-import op6 from "./assets/1piece/6.jpg";
-import op7 from "./assets/1piece/7.jpg";
-import op8 from "./assets/1piece/8.jpg";
-import op9 from "./assets/1piece/9.jpg";
+import op0 from "../public/assets/op0.jpg";
+import op1 from "../public/assets/op1.jpg";
+import op10 from "../public/assets/op10.jpg";
+import op11 from "../public/assets/op11.jpg";
+import op2 from "../public/assets/op2.jpg";
+import op3 from "../public/assets/op3.jpg";
+import op4 from "../public/assets/op4.jpg";
+import op5 from "../public/assets/op5.jpg";
+import op6 from "../public/assets/op6.jpg";
+import op7 from "../public/assets/op7.jpg";
+import op8 from "../public/assets/op8.jpg";
+import op9 from "../public/assets/op9.jpg";
 
 interface CardType {
   src: unknown;
@@ -174,7 +174,7 @@ function Game() {
   }, [isWin,time]);
 
   return (
-    <div className={`${set==='lotm'? 'bg-[url(./assets/lotm/bgg.jpg)]' : 'bg-[url(./assets/1piece/bg.jpg)]'}  bg-cover text-white text-center place-items-center p-5 h-screen overflow-auto`}>
+    <div className={`${set==='lotm'? 'bg-[url(../public/assets/lotmbgg.jpg)]' : 'bg-[url(../public/assets/opbg.jpg)]'}  bg-cover text-white text-center place-items-center p-5 h-screen overflow-auto`}>
       {isWin && <Confetti />}  {/* 🎉 Winning Effect */}
       <div className="mx-40">
         <p className="font-bold text-4xl">Magic Match</p>
