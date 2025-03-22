@@ -26,7 +26,7 @@ const Card = (props: any) => {
 
         {/* Card Back */}
         <img
-          src={`/src/assets/${props.back}/back.jpg`}
+          src={`${import.meta.env.BASE_URL}/assets/${props.back}back.jpg`}
           alt="card back"
           className={`absolute w-full h-full rounded-lg shadow-lg backface-hidden ${
             props.flipped ? "opacity-0" : "opacity-100"
