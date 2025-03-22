@@ -2,7 +2,7 @@
   "name": "testappeductionapp",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://jenanmagdi.github.io/flippedCards/",
+  "homepage": "https://jenanmagdi.github.io/flippedCards",
   "type": "module",
   "scripts": {
     "dev": "vite",

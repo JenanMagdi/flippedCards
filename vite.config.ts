@@ -9,4 +9,5 @@ export default defineConfig({
     react()
   ],
   // base:"https://jenanmagdi.github.io/flippedCards"
+  base:"/flippedCards/"
 })

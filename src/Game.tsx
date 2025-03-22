@@ -1,163 +1,69 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-unused-expressions */
-// /* eslint-disable @typescript-eslint/no-unused-expressions */
-// /* eslint-disable @typescript-eslint/no-explicit-any */
-// import { useEffect, useState } from "react";
-// import Card from "./components/Card";
-// const cardSet = [
-//     {'src': "/src/assets/0.jpg",matched:false},
-//     {'src': "/src/assets/1.jpg",matched:false},
-//     {'src': "/src/assets/2.jpg",matched:false},
-//     {'src': "/src/assets/3.jpg", matched:false},
-//     {'src': "/src/assets/4.jpg", matched:false},
-//     {'src': "/src/assets/5.jpg", matched:false},
-//     {'src': "/src/assets/6.jpg", matched:false},
-//     {'src': "/src/assets/7.jpg", matched:false},
-//     {'src': "/src/assets/8.jpg", matched:false},
-//     {'src': "/src/assets/9.jpg", matched:false},
-//   ]
-// function App() {
-//   const [cards, setCards]:any = useState([]); // Defined state type explicitly
-//   const [turns,setTurns] = useState(0)
-//   const [choiceOne,setChoiceOne] = useState<any>(null)
-//   const [choiceTwo,setChoiceTwo] = useState<any>(null)
-//   const [disabled,setDisabled] = useState<any>(false)
-//   const [time, setTime] = useState(180);
-  
-//   const shuffleCards = () => {
-//     const shuffleCards = [...cardSet, ...cardSet ]
-//     .sort(()=>Math.random() - 0.5)
-//     .map((card)=>({...card, id:Math.random()}))
-
-//     setChoiceOne(null)
-//     setChoiceTwo(null)
-//     setTime(180)
-//     setCards(shuffleCards)
-//     setTurns(0)
-//   }
-//   console.log(turns);
-
-  // const handleChoice = (card:any) =>{
-  //   choiceOne ? setChoiceTwo(card) : setChoiceOne(card)
-    
-  // }  
-//   useEffect(()=>{
-//     if(choiceOne && choiceTwo) {
-//     setDisabled(true)
-//       if(choiceOne.src === choiceTwo.src)
-//       {
-//         setCards((prevCards:any)=>{
-//           return prevCards.map((card:any) => {
-//             if(card.src===choiceOne.src){
-//               return {...card, matched:true}
-//             }
-//             else{
-//               return card
-//             }
-//           })
-//         })
-//         resetTurn()
-//       }else {
-//         setTimeout(() => {
-//           resetTurn()
-//         }, 1000); 
-
-//       }
-//     }
-//   },[choiceOne,choiceTwo])
-
-//   const resetTurn = ()=>{
-//     setChoiceOne(null)
-//     setChoiceTwo(null)
-//     setTurns(prevTurns => prevTurns + 1)
-//     setDisabled(false)
-//   }
-
-//   //start new game automaticly
-//   useEffect(()=>{
-//     shuffleCards()
-//   },[])
-
-//   //timer
-//   useEffect(() => {
-//     const timer = setInterval(() => {
-//       setTime((time) => {
-//         if (time === 0) {
-//           clearInterval(timer);
-//           return 0;
-//         } else return time - 1;
-//       });
-//     }, 1000);
-//   }, []);
-
-//   return (
-//     <div className="bg-gray-900 text-white text-center place-items-center p-5  h-screen *:*:m-2">
-//     <div className="  mx-72">
-//       <p className="font-bold text-4xl">Magic Match</p>
-//       <div className="  flex justify-evenly items-center p-5">
-//       <button onClick={shuffleCards} className="border-2 border-gray-300 px-8 p-2">New Game</button>
-//       <p className="text-xl">turns: {turns}</p>
-//       <p className="text-xl">
-//         Time left: {`${Math.floor(time / 60)}`.padStart(2, '0')}:
-//         {`${time % 60}`.padStart(2, '0')}
-//       </p>
-//       </div>
-//       <div className='flex flex-wrap *:w-32 *:h-44 justify-center'>
-//         {cards.map((card:any) => (
-//           <Card 
-//           key={card.id} 
-//           card={card}
-//           handleChoice={handleChoice}
-//           flipped={card === choiceOne || card === choiceTwo || card.matched}
-//           disabled={disabled}
-//           />
-//         ))}
-//       </div>
-//     </div>
-//     </div>
-//   )
-// }
-
-// export default App
-
 
 import { useEffect, useState } from "react";
 import Confetti from 'react-confetti';
+import lotm0 from "./assets/lotm/0.jpg";
+import lotm1 from "./assets/lotm/1.jpg";
+import lotm10 from "./assets/lotm/10.jpg";
+import lotm11 from "./assets/lotm/11.jpg";
+import lotm2 from "./assets/lotm/2.jpg";
+import lotm3 from "./assets/lotm/3.jpg";
+import lotm4 from "./assets/lotm/4.jpg";
+import lotm5 from "./assets/lotm/5.jpg";
+import lotm6 from "./assets/lotm/6.jpg";
+import lotm7 from "./assets/lotm/7.jpg";
+import lotm8 from "./assets/lotm/8.jpg";
+import lotm9 from "./assets/lotm/9.jpg";
 import Card from "./components/Card";
 
+
+import op0 from "./assets/1piece/0.jpg";
+import op1 from "./assets/1piece/1.jpg";
+import op10 from "./assets/1piece/10.jpg";
+import op11 from "./assets/1piece/11.jpg";
+import op2 from "./assets/1piece/2.jpg";
+import op3 from "./assets/1piece/3.jpg";
+import op4 from "./assets/1piece/4.jpg";
+import op5 from "./assets/1piece/5.jpg";
+import op6 from "./assets/1piece/6.jpg";
+import op7 from "./assets/1piece/7.jpg";
+import op8 from "./assets/1piece/8.jpg";
+import op9 from "./assets/1piece/9.jpg";
+
 interface CardType {
-  src: string;
+  src: unknown;
   matched: boolean;
   id: number;
 }
 
 const cardSet1 = [
-  {'src': "/src/assets/lotm/0.jpg",matched:false},
-  {'src': "/src/assets/lotm/1.jpg",matched:false},
-  {'src': "/src/assets/lotm/2.jpg",matched:false},
-  {'src': "/src/assets/lotm/3.jpg", matched:false},
-  {'src': "/src/assets/lotm/4.jpg", matched:false},
-  {'src': "/src/assets/lotm/5.jpg", matched:false},
-  {'src': "/src/assets/lotm/6.jpg", matched:false},
-  {'src': "/src/assets/lotm/7.jpg", matched:false},
-  {'src': "/src/assets/lotm/8.jpg", matched:false},
-  {'src': "/src/assets/lotm/9.jpg", matched:false},
-  {'src': "/src/assets/lotm/10.jpg", matched:false},
-  {'src': "/src/assets/lotm/11.jpg", matched:false},
+  {'src': {lotm0},matched:false},
+  {'src': {lotm1},matched:false},
+  {'src': {lotm2},matched:false},
+  {'src': {lotm3}, matched:false},
+  {'src': {lotm4}, matched:false},
+  {'src': {lotm5}, matched:false},
+  {'src': {lotm6}, matched:false},
+  {'src': {lotm7}, matched:false},
+  {'src': {lotm8}, matched:false},
+  {'src': {lotm9}, matched:false},
+  {'src': {lotm10}, matched:false},
+  {'src': {lotm11}, matched:false},
 ]
 const cardSet2 = [
-  {'src': "/src/assets/1piece/0.jpg",matched:false},
-  {'src': "/src/assets/1piece/1.jpg",matched:false},
-  {'src': "/src/assets/1piece/2.jpg",matched:false},
-  {'src': "/src/assets/1piece/3.jpg", matched:false},
-  {'src': "/src/assets/1piece/4.jpg", matched:false},
-  {'src': "/src/assets/1piece/5.jpg", matched:false},
-  {'src': "/src/assets/1piece/6.jpg", matched:false},
-  {'src': "/src/assets/1piece/7.jpg", matched:false},
-  {'src': "/src/assets/1piece/8.jpg", matched:false},
-  {'src': "/src/assets/1piece/9.jpg", matched:false},
-  {'src': "/src/assets/1piece/10.jpg", matched:false},
-  {'src': "/src/assets/1piece/11.jpg", matched:false},
+  {'src': {op0},matched:false},
+  {'src': {op1},matched:false},
+  {'src': {op2},matched:false},
+  {'src': {op3}, matched:false},
+  {'src': {op4}, matched:false},
+  {'src': {op5}, matched:false},
+  {'src': {op6}, matched:false},
+  {'src': {op7}, matched:false},
+  {'src': {op8}, matched:false},
+  {'src': {op9}, matched:false},
+  {'src': {op10}, matched:false},
+  {'src': {op11}, matched:false},
 ]
 function Game() {
   const [cards, setCards] = useState<CardType[]>([]);
